@@ -6,7 +6,7 @@ set number
 "" set rnu
 set relativenumber
 " Highlight Column After 'textwidth'
-set colorcolumn=120
+set colorcolumn=80
 
 " Color Theme Settings
 " ** gruvbox **
