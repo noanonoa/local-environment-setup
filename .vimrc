@@ -1,4 +1,4 @@
-" **** General Settings
+" ************************************************************ General Settings
 
 " Show Line Numbers
 set number
@@ -12,7 +12,7 @@ set colorcolumn=80
 " Disable Error Indicators (beep sound, flashing screen)
 set vb t_vb=
 
-" **** Search Settings
+" ************************************************************* Search Settings
 
 " Ignore Case in Search
 set ignorecase
@@ -23,13 +23,12 @@ set hlsearch
 " Show Search Results As Typing
 set incsearch
 
-" **** Color Theme Settings
+" ******************************************************** Color Theme Settings
 
 " Theme papercolor
 " git clone https://github.com/NLKNguyen/papercolor-theme.git ~/.vim/pack/colors/start/papercolor-theme
 colorscheme PaperColor
 set background=light
-" set t_Co=256
 
 " Theme gruvbox
 " autocmd vimenter * ++nested colorscheme gruvbox
@@ -40,7 +39,7 @@ set background=light
 " let g:molokai_original = 1
 " let g:rehash256 = 1
 
-" **** Advanced Settings
+" *********************************************************** Advanced Settings
 
 " Tab Settings
 set tabstop=2
@@ -51,9 +50,9 @@ set expandtab
 " Spellcheck
 set spell spelllang=en_us
 
-" **** Bindings
+" ******************************************************************** Bindings
 
-" Rebind <Leader> Key (Default `\`)
+" Rebind <Leader> Key (Default: \)
 let mapleader = "'"
 
 " Fix spelling with <leader>f shortcut ('f)
@@ -65,7 +64,7 @@ nnoremap <leader>s :set spell!
 " Global Search and Replace Line ('r)
 nnoremap <leader>r :s/
 
-" Global Search and Replace Global ('r)
+" Global Search and Replace Global ('R)
 nnoremap <leader>R :%s/
 
 " Clear Search Highlight ('n)
@@ -81,7 +80,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 
-" **** Running vi Within irb
+" ******************************************************* Running vi Within irb
 
 if has("autocmd")
   " Enable filetype detection
@@ -98,7 +97,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 
-" **** Enable True Color
+" *********************************************************** Enable True Color
 
 if (empty($TMUX))
   if (has("nvim"))
