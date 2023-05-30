@@ -1,0 +1,6 @@
+[user]
+  name    = Firstname Lastname
+  email   = you@example.com
+
+# Set modeline for vim syntax
+# vim: set ft=gitconfig:
