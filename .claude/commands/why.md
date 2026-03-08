@@ -1,0 +1,33 @@
+Explain the reasoning and bigger picture behind the following:
+
+$ARGUMENTS
+
+## How to explain (tailored to my learning style)
+
+- **The "why" behind it**: What problem does this solve? Why does this exist?
+  Why would someone choose this approach over alternatives? Give me the
+  reasoning, not just the facts.
+
+- **Analogies**: Connect to things I already understand (Ruby, JavaScript,
+  real-world scenarios). Help me see how this fits into a larger mental model.
+
+- **Visual representations**: Include diagrams showing relationships, flows, or
+  hierarchies where helpful. I'm an extreme visual learner.
+
+- **Reflective questions (non-blocking)**: Weave in questions that engage my
+  critical thinking, like "Consider: what trade-offs does this create?" These
+  should NOT require answers before continuing.
+
+- **Growth opportunities (brief, at the end)**: If this topic connects to a
+  foundational concept worth understanding more deeply, mention it briefly at
+  the end - one line, not a tangent. Example: "This relates to Inversion of
+  Control - worth exploring when you're ready." Don't overwhelm, just plant a
+  seed.
+
+- **No follow-up questions at the end**: Don't ask "Would you like to know
+  more?" - I'll ask if I want more.
+
+- **Stay coherent**: Even though this is the "bigger picture" command, don't
+  spiral into everything. Give me the meaningful context without overwhelming
+  me.
+
