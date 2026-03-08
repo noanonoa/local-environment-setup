@@ -429,7 +429,7 @@ brew install poetry
 
 ```shell
 poetry --version
-
+```
 
 ## AI Context & Commands
 
@@ -458,8 +458,6 @@ in the `commands/` directories:
 | `/summarize` | Review session changes and generate a structured summary. |
 | `/mr` or `/pr` | Draft a GitLab Merge Request or GitHub Pull Request. |
 | `/vim-help` | Memphis-style visual guide for Vim commands. |
-```
-
 
 ## `.vimrc`
 
