@@ -8,21 +8,23 @@ personal preference and has served me well over the years.
 
 1. [Mac Setup](#mac-setup)
 2. [Dev Setup](#dev-setup)
-    - [iTerm2](#1-iterm2)
-    - [Homebrew](#2-homebrew)
-    - [Oh My Zsh](#3-oh-my-zsh)
-    - [Powerlevel10k](#4-powerlevel10k)
-    - [`.zshrc`](#5-zshrc)
-    - [`.secrets`](#6-secrets)
-    - [Claude Code](#7-claude-code)
-    - [Apple XCode](#8-apples-xcode)
-    - [Git](#9-git)
-    - [SSH](#10-set-up-ssh)
-    - [mise](#11-mise)
-    - [Yarn](#12-yarn)
-    - [Poetry](#13-poetry)
-3. [`.vimrc`](#vimrc)
-4. [Apps](#apps)
+    - [iTerm2](#iterm2)
+    - [Homebrew](#homebrew)
+    - [Oh My Zsh](#oh-my-zsh)
+    - [Powerlevel10k](#powerlevel10k)
+    - [`.zshrc`](#zshrc)
+    - [`.secrets`](#secrets)
+    - [Claude Code](#claude-code)
+    - [Gemini CLI](#gemini-cli)
+    - [Apple XCode](#apples-xcode)
+    - [Git](#git)
+    - [SSH](#set-up-ssh)
+    - [mise](#mise)
+    - [Yarn](#yarn)
+    - [Poetry](#poetry)
+3. [AI Context & Commands](#ai-context--commands)
+4. [`.vimrc`](#vimrc)
+5. [Apps](#apps)
     - [Browsers](#browsers)
     - [VS Code](#vs-code)
     - [JetBrains Toolbox](#jetbrains-toolbox)
@@ -100,7 +102,7 @@ Download and configure the following **in order**:
 
 Download and install from the website.
 
-### 2. Homebrew
+### Homebrew
 
 Install from the command line:
 
@@ -117,7 +119,7 @@ brew update
 NOTE: On the M1 install, there may be a few errors at the end. Run the
 commands to add to path, then run `brew doctor` and run the commands listed.
 
-### 3. Oh My Zsh
+### Oh My Zsh
 
 [Oh My Zsh](https://ohmyz.sh)
 
@@ -129,7 +131,7 @@ NOTE: This will overwrite your existing `.zshrc`. If you already have a
 configured `.zshrc`, back it up first and restore your customizations after
 installing.
 
-### 4. Powerlevel10k
+### Powerlevel10k
 
 Install via Homebrew:
 
@@ -146,7 +148,7 @@ p10k configure
 This will walk you through setting up your prompt style and save the config
 to `~/.p10k.zsh`. Powerlevel10k is already sourced in `.zshrc`.
 
-### 5. `.zshrc`
+### `.zshrc`
 
 This repo includes a configured `.zshrc` with aliases, PATH settings, and tool
 activation (mise, Powerlevel10k, Claude Code). Copy it to your home directory:
@@ -165,9 +167,9 @@ source ~/.zshrc
 ```
 
 The `.zshrc` sources a separate `~/.secrets` file for sensitive values. See
-the next step to set that up.
+below to set that up.
 
-### 6. `.secrets`
+### `.secrets`
 
 `.zshrc` handles shell configuration (aliases, PATH, tool activation).
 `.secrets` handles sensitive values (API tokens, credentials) that should
@@ -193,7 +195,7 @@ Boilerplate for `~/.secrets`:
 
 `.secrets` is already in `.gitignore_global` and sourced by `.zshrc`.
 
-### 7. Claude Code
+### Claude Code
 
 [Claude Code Documentation](https://code.claude.com/docs/en/overview)
 
@@ -206,11 +208,21 @@ curl -fsSL https://claude.ai/install.sh | bash
 This installs to `~/.local/bin`. Make sure it's in your PATH (already
 included in `.zshrc`).
 
-### 8. Apple's XCode
+### Gemini CLI
+
+[Gemini CLI Documentation](https://github.com/google/gemini-cli)
+
+Install from the command line:
+
+```shell
+npm install -g @google/gemini-cli
+```
+
+### Apple's XCode
 
 [Apple Store - XCode](https://apps.apple.com/us/app/xcode/id497799835)
 
-### 9. Git
+### Git
 
 ```shell
 brew install git
@@ -277,7 +289,7 @@ Input your global ignores in `~/.gitignore_global`:
   .gitconfig.private
 ```
 
-### 10. Set up SSH
+### Set up SSH
 
 1. Check if you have **SSH key**, run:
 
@@ -318,7 +330,7 @@ ssh -T git@github.com
 "Hi <username>! You've successfully authenticated..."
 ```
 
-### 11. mise
+### mise
 
 [mise Documentation](https://mise.jdx.dev)
 
@@ -398,18 +410,18 @@ to that version when you `cd` into the project.
 NOTE: mise manages **runtimes only**. Package and dependency managers like Yarn
 and Poetry are installed separately via Homebrew.
 
-### 12. Yarn
+### Yarn
 
 ```shell
 brew install yarn
 ```
 
-### 13. Poetry
+### Poetry
 
 [Poetry Documentation](https://python-poetry.org)
 
 Poetry is a Python dependency and virtual environment manager (similar to
-Bundler for Ruby or Yarn for JavaScript).
+Bundler for Ruby on Rails or Yarn for JavaScript).
 
 ```shell
 brew install poetry
@@ -417,6 +429,35 @@ brew install poetry
 
 ```shell
 poetry --version
+
+
+## AI Context & Commands
+
+This repository includes specialized AI configuration for **Claude Code** and
+**Gemini CLI**. These files establish project standards, communication preferences,
+and custom workflows to ensure consistent and high-quality AI assistance.
+
+### `.claude/` & `.gemini/` Directories
+
+- `CLAUDE.md` / `GEMINI.md`: Global context files that define project standards,
+  learning gaps, and communication rules.
+- `commands/`: Custom command suites for common workflows (e.g., `/explain`,
+  `/whiteboard`, `/summarize`).
+
+### Usage
+
+When using Claude Code or Gemini CLI in this repo, the assistants will automatically
+load the context from the `.md` files. You can trigger custom commands defined
+in the `commands/` directories:
+
+| Command | Purpose |
+|:-------:|:--------|
+| `/explain` | Focused concept explanations using analogies and visuals. |
+| `/why` | Reasoning and "bigger picture" behind a concept or architecture. |
+| `/whiteboard` | Coaching session for drawing diagrams on paper/whiteboard. |
+| `/summarize` | Review session changes and generate a structured summary. |
+| `/mr` or `/pr` | Draft a GitLab Merge Request or GitHub Pull Request. |
+| `/vim-help` | Memphis-style visual guide for Vim commands. |
 ```
 
 
