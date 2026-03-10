@@ -92,6 +92,18 @@ Set Screenshot Location (Desktop):
 defaults write com.apple.screencapture "location" -string "~/Desktop" && killall SystemUIServer
 ```
 
+Disable Apple Music launch on bluetooth device connect:
+
+```shell
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+```
+
+To re-enable:
+
+```shell
+launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
+```
+
 ## Dev Setup
 
 Download and configure the following **in order**:
